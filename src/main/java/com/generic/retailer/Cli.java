@@ -67,13 +67,14 @@ public final class Cli implements AutoCloseable {
       /////////
       Map<String,Integer> order = trolley.getOrder();
       String user_input = line.get();
-      if ("exit".equalsIgnoreCase(line.get())) {
+      if ("exit".equalsIgnoreCase(user_input)) {
         break;
       }
-      int value = order.get(user_input);
-      order.put(user_input, value + 1);
+
+      trolley.addToTrolley(user_input, 1);
       System.out.println(order);
       double costs = trolley.calculateCost();
+
 
       writeLine(String.format("Thank you for visiting Generic Retailer, your total // is %s", costs));
       ////////

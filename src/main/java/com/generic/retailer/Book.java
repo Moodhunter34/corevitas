@@ -1,14 +1,17 @@
 package com.generic.retailer;
 
-public final class Book {
-    double cost;
+public final class Book implements Item {
 
-    public Book() {
-        this.cost = 5;
+    private static final int BOOK_COST = 5;
+
+    @Override
+    public double calculateCost(int quantity) {
+        return quantity * BOOK_COST;
     }
 
-    public Book(double cost) {
-        this.cost = cost;
+    @Override
+    public void displayCost() {
+        System.out.println("cost of book = " + calculateCost(1));
     }
     
 }
