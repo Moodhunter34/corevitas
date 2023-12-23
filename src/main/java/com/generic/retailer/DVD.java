@@ -22,4 +22,11 @@ public class DVD implements Item {
     public void displayCost() {
         System.out.println("cost of dvd = " + calculateCost(1));
     }
+
+    private void calculate2for1Discount(int quantity) {
+        if (quantity >= 2) {
+            double discount = calculateCost(quantity - 1);
+            System.out.println("2 for 1 Discount on DVDs: -" + discount);
+        }
+    }
 }

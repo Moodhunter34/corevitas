@@ -6,7 +6,7 @@
 //import java.util.Map;
 //
 //public class Receipt {
-//    private static double DISCOUNT_PERCENTAGE_20 = 0.8;
+//
 //    private final Map<String, Integer> items;
 //
 //    Trolley trolley = new Trolley();
@@ -37,34 +37,6 @@
 //        }
 //        receipt.append(String.format("====================%n"));
 //        return receipt + printTotal();
-//    }
-//
-//    // 20% off on Thursdays
-//    private double discountThursdays(String itemName, LocalDate currentDay) {
-//        double itemPrice = trolley.getProductPrice(itemName);
-//        if (currentDay.getDayOfWeek() == DayOfWeek.THURSDAY) {
-//            return itemPrice * DISCOUNT_PERCENTAGE_20;
-//        }
-//        return itemPrice;
-//    }
-//
-//    private double applyPercentDiscount(String itemName, int itemQuantity) {
-//        // Retrieve  price for current item
-//        double itemPrice = trolley.getProductPrice(itemName);
-//
-//        // Apply discounts based on item type
-//        if ("dvd".equals(itemName) && itemQuantity >= 2) {
-//            // 2 for 1 on DVDs
-//            int numberOfPairs = itemQuantity / 2;
-//            if (itemQuantity % 2 == 0) {
-//                return (numberOfPairs * itemPrice);
-//            } else {
-//                return (numberOfPairs * itemPrice) + itemPrice;
-//            }
-//        }
-//
-//        // No discount, regular price
-//        return (itemPrice * itemQuantity);
 //    }
 //
 //    public String printTotal() {

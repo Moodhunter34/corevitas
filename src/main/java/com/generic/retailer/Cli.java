@@ -3,9 +3,7 @@ package com.generic.retailer;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.function.Predicate;
@@ -75,8 +73,10 @@ public final class Cli implements AutoCloseable {
       System.out.println(order);
       double costs = trolley.calculateCost();
 
+      // Display discount information
+      trolley.printReceipt();
 
-      writeLine(String.format("Thank you for visiting Generic Retailer, your total // is %s", costs));
+      writeLine(String.format("Thank you for visiting Generic Retailer, your total cost is: £%s", costs));
       ////////
       writeLine("Would you like anything else?");
       prompt();
