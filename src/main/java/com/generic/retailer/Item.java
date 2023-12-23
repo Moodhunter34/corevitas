@@ -1,6 +1,6 @@
 package com.generic.retailer;
 
-public interface Item {
+interface Item {
 
     double calculateCost(int quantity);
     void displayCost();

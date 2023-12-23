@@ -7,7 +7,7 @@ public class ItemFactory {
             case "book":
                 return new Book();
             case "dvd":
-                return new DVD();
+                return new DVD(new DiscountTwoForOne());
             case "cd":
                 return new CD();
             default:
