@@ -71,10 +71,10 @@ public final class Cli implements AutoCloseable {
 
       trolley.addToTrolley(user_input, 1);
       System.out.println(order);
-      double costs = trolley.calculateCost();
+      double costs = trolley.calculateCost(this.date);
 
       // Display discount information
-      trolley.printReceipt();
+      trolley.printReceipt(this.date);
 
       writeLine(String.format("Thank you for visiting Generic Retailer, your total cost is: £%s", costs));
       ////////

@@ -36,12 +36,18 @@ public class DVD implements Item {
 //    }
 
     @Override
-    public double calculateCost(int quantity) {
+    public double calculateCost(int quantity,  LocalDate date) {
         double originalCost = quantity * DVD_COST;
         double discountedCost = discount.applyDiscount(originalCost, quantity);
 
+
         this.discount2for1 = discountedCost;
-        return discountedCost;
+
+        double dvdCost = 0;
+        if (quantity % 2 == 1 && LocalDate.now().getDayOfWeek() == DayOfWeek.SATURDAY) {
+            dvdCost = 0.2 * DVD_COST;
+        }
+        return discountedCost - dvdCost;
     }
 
     @Override
